@@ -4,4 +4,4 @@ scikit-learn
 matplotlib
 seaborn
 tensorflow
-keras
+keras==2.1.3
