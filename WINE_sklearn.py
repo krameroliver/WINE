@@ -13,7 +13,7 @@ from sklearn.metrics import classification_report
 X,y = get_data(sample_replicats=100000)
 #y = one_dim_array(y)
 
-model = mlp(learning_rate='adaptive',hidden_layer_sizes=(100,99,10),
+model = mlp(learning_rate='adaptive',hidden_layer_sizes=(20,10),
            max_iter=1000000,verbose=1)
 
 le = LE()
