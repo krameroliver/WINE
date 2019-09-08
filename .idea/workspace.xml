@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="180916a1-4424-4df7-befb-aee2b707611e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/WINE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WINE.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WINE_keras.py" beforeDir="false" afterPath="$PROJECT_DIR$/WINE_keras.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567892531464</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="keras model training">
+      <created>1567898895864</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1567898895864</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,6 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="delete venv" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete venv" />
+    <MESSAGE value="keras model training" />
+    <option name="LAST_COMMIT_MESSAGE" value="keras model training" />
   </component>
 </project>

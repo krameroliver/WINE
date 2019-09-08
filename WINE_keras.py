@@ -5,6 +5,9 @@ import warnings
 #warnings.simplefilter(action='ignore', category="DataConversionWarning")
 from Data.data import get_data
 
+from keras import backend as K
+K.set_session(K.tf.Session(config=K.tf.ConfigProto(intra_op_parallelism_threads=2, inter_op_parallelism_threads=2)))
+
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.utils import to_categorical
@@ -17,7 +20,7 @@ import numpy as np
 
 from keras.wrappers.scikit_learn import KerasClassifier
 
-X,y = get_data(sample_replicats=10,as_multi_class=True)
+X,y = get_data(sample_replicats=100000,as_multi_class=True)
 
 #le = LE()
 #le.fit(y)
@@ -34,9 +37,9 @@ X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 
 ann = Sequential()
-ann.add(Dense(64, activation='relu', input_shape=(11,)))
+ann.add(Dense(20, activation='sigmoid', input_shape=(11,)))
 # Add one hidden layer
-ann.add(Dense(80, activation='relu'))
+ann.add(Dense(10, activation='sigmoid'))
 # Add an output layer
 ann.add(Dense(3, activation='sigmoid'))
 
@@ -44,7 +47,7 @@ ann.compile(loss='binary_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])
 
-ann.fit(X_train, y_train, epochs=20, batch_size=1,verbose=0)
+ann.fit(X_train, y_train, epochs=200, batch_size=1,verbose=1)
 
 
 
@@ -56,8 +59,8 @@ for r in range(y_pred_classes.shape[0]):
 
 
 
-#print(y_test)
-#print(y_pred_classes)
+print(y_test)
+print(y_pred_classes)
 
-print(confusion_matrix(y_test, y_pred))
-print(f1_score(y_test,y_pred))
+#print(confusion_matrix(y_test, y_pred))
+#print(f1_score(y_test,y_pred))
