@@ -1,26 +1,21 @@
-import warnings
 #warnings.simplefilter(action='ignore', category=FutureWarning)
 #warnings.simplefilter(action='ignore', category=RuntimeWarning)
 #warnings.simplefilter(action='ignore', category="UndefinedMetricWarning")
 #warnings.simplefilter(action='ignore', category="DataConversionWarning")
+from keras import backend as K
+
 from Data.data import get_data
 
-from keras import backend as K
-K.set_session(K.tf.Session(config=K.tf.ConfigProto(intra_op_parallelism_threads=2, inter_op_parallelism_threads=2)))
+#K.set_session(K.tf.Session(config=K.tf.ConfigProto(intra_op_parallelism_threads=2, inter_op_parallelism_threads=2)))
 
 from keras.models import Sequential
 from keras.layers import Dense
-from keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, cohen_kappa_score
-from sklearn.preprocessing import LabelEncoder as LE
 
 import numpy as np
 
-from keras.wrappers.scikit_learn import KerasClassifier
-
-X,y = get_data(sample_replicats=100000,as_multi_class=True)
+X,y = get_data(sample_replicats=100,as_multi_class=True)
 
 #le = LE()
 #le.fit(y)
@@ -37,9 +32,9 @@ X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 
 ann = Sequential()
-ann.add(Dense(20, activation='sigmoid', input_shape=(11,)))
+ann.add(Dense(2, activation='sigmoid', input_shape=(11,)))
 # Add one hidden layer
-ann.add(Dense(10, activation='sigmoid'))
+ann.add(Dense(1, activation='sigmoid'))
 # Add an output layer
 ann.add(Dense(3, activation='sigmoid'))
 
