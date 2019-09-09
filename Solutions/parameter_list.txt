@@ -1,0 +1,7 @@
+paket   methode     parameter           beleungsmöflichkeiten
+data    get_data    sample_replicats    integer
+data    get_data    as_multi_class      boolean
+data    one_dim_array   y               results_matrix
+utils   quality     data_quality_type   'classification'/'regression'/'multi_label'
+utils   quality     y_true              zielwerte
+utils   quality     y_pred              vorhergesagte werte
